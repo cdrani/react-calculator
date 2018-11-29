@@ -18,30 +18,30 @@ const ButtonPanel = () => {
         <Button buttonName="AC" />
         <Button buttonName="+/-" />
         <Button buttonName="%" />
-        <Button color="orange" buttonName="/" />
+        <Button color="#ff7200" buttonName="/" />
       </Div>
       <Div>
         <Button buttonName="7" />
         <Button buttonName="8" />
         <Button buttonName="9" />
-        <Button color="orange" buttonName="x" />
+        <Button color="#ff7200" buttonName="x" />
       </Div>
       <Div>
         <Button buttonName="4" />
         <Button buttonName="5" />
         <Button buttonName="6" />
-        <Button color="orange" buttonName="-" />
+        <Button color="#ff7200" buttonName="-" />
       </Div>
       <Div>
         <Button buttonName="1" />
         <Button buttonName="2" />
         <Button buttonName="3" />
-        <Button color="orange" buttonName="+" />
+        <Button color="#ff7200" buttonName="+" />
       </Div>
       <Div>
         <Button buttonName="0" wide />
         <Button buttonName="." />
-        <Button color="orange" buttonName="=" />
+        <Button color="#ff7200" buttonName="=" />
       </Div>
     </Wrapper>
   )
