@@ -1,5 +1,6 @@
 import React from 'react'
+import Display from './Display'
 
-const App = () => <h1>hello world</h1>
+const App = () => <Display />
 
 export default App
