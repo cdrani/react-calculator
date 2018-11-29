@@ -4,14 +4,14 @@ import styled from 'styled-components'
 
 const Input = styled.input`
   display: flex;
-  width: 700px;
   height: 100px;
   color: #fff;
   font-weight: bold;
   padding: 10px;
   text-align: right;
-  background-color: #ccc;
-  font-size: 3rem;
+  background-color: #aaa;
+  font-size: 4rem;
+  border: none;
 `
 
 const Display = ({ result }) => <Input defaultValue={result} />
