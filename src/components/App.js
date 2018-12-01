@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 import Display from './Display'
 import ButtonPanel from './ButtonPanel'
+import calculate from '../logic/calculate.js'
 
 const AppWrapper = styled.div`
   box-sizing: border-box;
@@ -11,13 +12,30 @@ const AppWrapper = styled.div`
   margin: 0 auto;
 `
 
-const App = () => {
-  return (
-    <AppWrapper id="calc">
-      <Display />
-      <ButtonPanel />
-    </AppWrapper>
-  )
-}
+export default class App extends Component {
+  state = {
+    total: '0',
+    next: '',
+    operation: null
+  }
 
-export default App
+  handleClick = buttonName => {
+    const { total, next, operation } = calculate(this.state, buttonName)
+    this.setState({
+      total,
+      next,
+      operation
+    })
+    console.log(this.state)
+  }
+
+  render() {
+    const { next, total } = this.state
+    return (
+      <AppWrapper id="calc">
+        <Display result={next ? next.toString() : total.toString()} />
+        <ButtonPanel clickHandler={this.handleClick} />
+      </AppWrapper>
+    )
+  }
+}

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-const CalcButton = styled.button`
+const CalcButton = styled.input`
   width: ${props => (props.wide ? '50%' : '25%')};
   height: 100%;
   font-size: 3rem;
@@ -17,11 +17,24 @@ const CalcButton = styled.button`
   }
 `
 
-const Button = ({ buttonName, color, wide }) => (
-  <CalcButton color={color} wide={wide}>
-    {buttonName}
-  </CalcButton>
-)
+const Button = ({ buttonName, color, wide, clickHandler }) => {
+  let input
+
+  const handleClick = buttonName => {
+    return clickHandler(input.value)
+  }
+
+  return (
+    <CalcButton
+      ref={i => (input = i)}
+      color={color}
+      wide={wide}
+      onClick={handleClick}
+      type="button"
+      value={buttonName}
+    />
+  )
+}
 
 Button.propTypes = {
   buttonName: PropTypes.string.isRequired,

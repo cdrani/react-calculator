@@ -11,37 +11,39 @@ const Wrapper = styled.div`
   flex-direction: column;
 `
 
-const ButtonPanel = () => {
+const ButtonPanel = ({ clickHandler }) => {
+  const handleClick = buttonName => clickHandler(buttonName)
+
   return (
     <Wrapper>
       <Div>
-        <Button buttonName="AC" />
-        <Button buttonName="+/-" />
-        <Button buttonName="%" />
-        <Button color="#ff7200" buttonName="/" />
+        <Button buttonName="AC" clickHandler={handleClick} />
+        <Button buttonName="+/-" clickHandler={handleClick} />
+        <Button buttonName="%" clickHandler={handleClick} />
+        <Button color="#ff7200" buttonName="/" clickHandler={handleClick} />
       </Div>
       <Div>
-        <Button buttonName="7" />
-        <Button buttonName="8" />
-        <Button buttonName="9" />
-        <Button color="#ff7200" buttonName="x" />
+        <Button buttonName="7" clickHandler={handleClick} />
+        <Button buttonName="8" clickHandler={handleClick} />
+        <Button buttonName="9" clickHandler={handleClick} />
+        <Button color="#ff7200" buttonName="x" clickHandler={handleClick} />
       </Div>
       <Div>
-        <Button buttonName="4" />
-        <Button buttonName="5" />
-        <Button buttonName="6" />
-        <Button color="#ff7200" buttonName="-" />
+        <Button buttonName="4" clickHandler={handleClick} />
+        <Button buttonName="5" clickHandler={handleClick} />
+        <Button buttonName="6" clickHandler={handleClick} />
+        <Button color="#ff7200" buttonName="-" clickHandler={handleClick} />
       </Div>
       <Div>
-        <Button buttonName="1" />
-        <Button buttonName="2" />
-        <Button buttonName="3" />
-        <Button color="#ff7200" buttonName="+" />
+        <Button buttonName="1" clickHandler={handleClick} />
+        <Button buttonName="2" clickHandler={handleClick} />
+        <Button buttonName="3" clickHandler={handleClick} />
+        <Button color="#ff7200" buttonName="+" clickHandler={handleClick} />
       </Div>
       <Div>
-        <Button buttonName="0" wide />
-        <Button buttonName="." />
-        <Button color="#ff7200" buttonName="=" />
+        <Button buttonName="0" wide clickHandler={handleClick} />
+        <Button buttonName="." clickHandler={handleClick} />
+        <Button color="#ff7200" buttonName="=" clickHandler={handleClick} />
       </Div>
     </Wrapper>
   )

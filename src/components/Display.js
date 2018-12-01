@@ -14,7 +14,12 @@ const Input = styled.input`
   border: none;
 `
 
-const Display = ({ result }) => <Input defaultValue={result} />
+const Display = ({ result }) => {
+  const handleChange = e => {
+    e.target.value = result
+  }
+  return <Input value={result} onChange={handleChange} />
+}
 
 Display.propTypes = {
   result: PropTypes.string.isRequired
