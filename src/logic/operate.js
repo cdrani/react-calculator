@@ -1,25 +1,30 @@
 import Big from 'big.js'
 
+const numLength = value =>
+  Math.abs(value)
+    .toString()
+    .split('.')
+    .join('').length
+
+const toSigDigs = value =>
+  (numLength(value) > 11 ? value.toExponential(9) : value).toString()
+
 const operate = (numberOne, numberTwo, operation) => {
   if (numberOne === '0') return numberTwo
 
   switch (operation) {
     case '+':
-      return Big(numberOne)
-        .plus(numberTwo)
-        .toString()
+      const sum = Big(numberOne).plus(numberTwo)
+      return toSigDigs(sum)
     case '-':
-      return Big(numberOne)
-        .minus(numberTwo)
-        .toString()
+      const diff = Big(numberOne).minus(numberTwo)
+      return toSigDigs(diff)
     case 'x':
-      return Big(numberOne)
-        .times(numberTwo)
-        .toString()
+      const product = Big(numberOne).times(numberTwo)
+      return toSigDigs(product)
     default:
-      return Big(numberOne)
-        .div(numberTwo)
-        .toString()
+      const quotient = Big(numberOne).div(numberTwo)
+      return toSigDigs(quotient)
   }
 }
 
