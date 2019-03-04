@@ -10,8 +10,9 @@ const Input = styled.input`
   text-align: right;
   background-color: #aaa;
   color: #fff;
-  font-size: 4rem;
+  font-size: 3rem;
   border: none;
+  outline: none;
 `
 
 const Display = ({ result }) => {
