@@ -8,7 +8,7 @@ const AppWrapper = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  width: 700px;
+  width: 500px;
   margin: 0 auto;
 `
 

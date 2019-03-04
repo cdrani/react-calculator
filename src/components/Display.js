@@ -5,11 +5,11 @@ import styled from 'styled-components'
 const Input = styled.input`
   display: flex;
   height: 100px;
-  color: #fff;
-  font-weight: bold;
   padding: 10px;
+  font-weight: bold;
   text-align: right;
   background-color: #aaa;
+  color: #fff;
   font-size: 4rem;
   border: none;
 `
